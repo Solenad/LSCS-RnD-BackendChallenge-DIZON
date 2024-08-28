@@ -1,17 +1,10 @@
-/*
-    Mongo DB Credentials
-    Username: roedizon80
-    Pass: oT9WiBg8yB9umVAx
-*/
-
-// necessary modules
 const express = require('express');
-const router = require('./route');
+const router = require('./routes/route');
 const connectDB = require('./configdb');
-const Question = require('./questionModel');
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 app.use('/api', router);
 
 // calls connectDB method
